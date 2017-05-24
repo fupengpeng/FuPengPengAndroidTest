@@ -16,18 +16,13 @@ import butterknife.Unbinder;
  * sugar orm 用法说明
  *     1.model的build.grade添加依赖：
  *         compile 'com.github.satyan:sugar:1.5'
- *         apt 'com.jakewharton:butterknife-compiler:8.1.0'//增加这一句
- *     2.model的build.grade下添加
- *         apply plugin: 'com.neenbedankt.android-apt'//增加这一句
- *     3.工程项目build.grade添加依赖
- *         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'.
- *     4.自定义Application继承android.app.Application
+ *     2.自定义Application继承android.app.Application
  *         //在应用初始化的时候被调用
  *         onCreate方法中添加
  *             SugarContext.init(this);
  *         onTerminate方法中添加
  *             SugarContext.terminate();
- *     5.在Mainifest文件中
+ *     3.在Mainifest文件中
  *         <application android:name="自定义Application">
  *             <meta-data
  *                 android:name="DATABASE"
