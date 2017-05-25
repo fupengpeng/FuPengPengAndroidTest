@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.fupengpeng.nohttp.NoHttpActivity">
+
+    <Button
+        android:id="@+id/btn_activity_no_get_string"
+        android:text="btn_activity_no_get_string"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+    <TextView
+        android:id="@+id/tv_activity_no_get_string"
+        android:text="tv_activity_no_get_string"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+    <TextView
+        android:id="@+id/tv_activity_no_get_string_particulars"
+        android:text="tv_activity_no_get_string_particulars"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+
+    <Button
+        android:id="@+id/btn_activity_no_get_json"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:text="btn_activity_no_get_json" />
+
+    <TextView
+        android:id="@+id/tv_activity_no_get_json"
+        android:text="tv_activity_no_get_json"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+    <TextView
+        android:id="@+id/tv_activity_no_get_json_particulars"
+        android:text="tv_activity_no_get_json_particulars"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+    <Button
+        android:id="@+id/btn_activity_no_post_string"
+        android:text="btn_activity_no_post_string"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+    <TextView
+        android:id="@+id/tv_activity_no_post_string"
+        android:text="tv_activity_no_post_string"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+    <TextView
+        android:id="@+id/tv_activity_no_post_string_particulars"
+        android:text="tv_activity_no_post_string_particulars"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+    <Button
+        android:id="@+id/btn_activity_no_post_json"
+        android:text="btn_activity_no_post_json"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+    <TextView
+        android:id="@+id/tv_activity_no_post_json"
+        android:text="tv_activity_no_post_json"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+    <TextView
+        android:id="@+id/tv_activity_no_post_json_particulars"
+        android:text="tv_activity_no_post_json_particulars"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
+
+
+</LinearLayout>

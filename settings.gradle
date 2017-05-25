@@ -1,1 +1,1 @@
-include ':app', ':sugarorm'
+include ':app', ':sugarorm', ':butterknife', ':volley', ':nohttp'
