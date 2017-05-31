@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.fupengpeng.designmodel.strategy.instance.use.BuyGoodsActivity">
+
+    <Button
+        android:id="@+id/btn_buy_goods_001"
+        android:text="普通会员"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+    <Button
+        android:id="@+id/btn_buy_goods_002"
+        android:text="铜牌会员"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+    <Button
+        android:id="@+id/btn_buy_goods_003"
+        android:text="银牌会员"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+    <Button
+        android:id="@+id/btn_buy_goods_004"
+        android:text="金牌会员"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+    <Button
+        android:id="@+id/btn_buy_goods_005"
+        android:text="铂金会员"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+    <Button
+        android:id="@+id/btn_buy_goods_006"
+        android:text="钻石会员"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+</LinearLayout>
