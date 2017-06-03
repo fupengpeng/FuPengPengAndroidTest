@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/activity_popup_window"
+    tools:context="com.fupengpeng.popupwindow.PopupWindowActivity">
+
+
+
+    <TextView
+        android:textSize="25dp"
+        android:gravity="center"
+        android:text="点击跳转出popupwindow"
+        android:id="@+id/tv_popup_window"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:textSize="25dp"
+        android:gravity="center"
+        android:text="点击跳转出dialog"
+        android:id="@+id/tv_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+
+</LinearLayout>
