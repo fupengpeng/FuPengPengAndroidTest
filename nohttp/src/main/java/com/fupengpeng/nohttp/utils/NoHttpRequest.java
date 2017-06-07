@@ -132,7 +132,6 @@ public abstract class NoHttpRequest {
 
     //
     public interface  NoHttpInterface<T>{
-
         //请求成功时调用
         public void onMySuccess(Response<T> response);
         //请求失败时调用

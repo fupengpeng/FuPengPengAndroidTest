@@ -33,11 +33,15 @@ public class PopupWindowActivity extends AppCompatActivity {
             }
         });
 
+
+        final AlertDialog.Builder[] builder = new AlertDialog.Builder[1];
+
         TextView textViewDialog = (TextView) findViewById(R.id.tv_dialog);
         textViewDialog.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(PopupWindowActivity.this);
+               builder[0] = new AlertDialog.Builder(PopupWindowActivity.this);
 //                builder.setIcon(R.drawable.ic_launcher);//添加ICON
 //                builder.setTitle("退出");                //添加标题
 //                builder.setMessage("你确定要离开吗？");     //添加MSG
@@ -45,9 +49,9 @@ public class PopupWindowActivity extends AppCompatActivity {
                 LayoutInflater inflater = getLayoutInflater();
                 View view = inflater.inflate(R.layout.change_password, null);
 
-                builder.setView(view);//添加自定义View
-                builder.create();
-                builder.show();
+                builder[0].setView(view);//添加自定义View
+                builder[0].create();
+                builder[0].show();
             }
         });
     }

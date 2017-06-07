@@ -1,1 +1,1 @@
-include ':app', ':sugarorm', ':butterknife', ':volley', ':nohttp', ':timer', ':timer', ':designmodel'
+include ':app', ':sugarorm', ':butterknife', ':volley', ':nohttp', ':timer', ':timer', ':designmodel', ':slidingmenu', ':drawerslide', ':selectallandinvertselect', ':popupwindow', ':listviewitemclick', ':pulltorefreshlistview', ':pulltorefresh'

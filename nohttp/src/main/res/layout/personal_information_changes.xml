@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:textSize="22dp"
+        android:layout_margin="15dp"
+        android:gravity="center|left"
+        android:text="昵称修改"
+        android:layout_width="match_parent"
+        android:layout_height="55dp" />
+    <EditText
+        android:textSize="22dp"
+        android:layout_margin="15dp"
+        android:gravity="center|left"
+        android:layout_width="match_parent"
+        android:layout_height="55dp" />
+    <Button
+        android:background="#21A675"
+        android:text="确定"
+        android:textSize="22dp"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="55dp" />
+
+</LinearLayout>
