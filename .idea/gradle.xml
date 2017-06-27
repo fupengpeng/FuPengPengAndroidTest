@@ -18,9 +18,9 @@
             <option value="$PROJECT_DIR$/pulltorefresh" />
             <option value="$PROJECT_DIR$/pulltorefreshlistview" />
             <option value="$PROJECT_DIR$/selectallandinvertselect" />
-            <option value="$PROJECT_DIR$/slidingmenu" />
             <option value="$PROJECT_DIR$/sugarorm" />
             <option value="$PROJECT_DIR$/timer" />
+            <option value="$PROJECT_DIR$/viewpager" />
             <option value="$PROJECT_DIR$/volley" />
           </set>
         </option>
