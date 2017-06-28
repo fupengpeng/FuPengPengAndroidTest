@@ -12,11 +12,13 @@
             <option value="$PROJECT_DIR$/butterknife" />
             <option value="$PROJECT_DIR$/designmodel" />
             <option value="$PROJECT_DIR$/drawerslide" />
+            <option value="$PROJECT_DIR$/listmenu" />
             <option value="$PROJECT_DIR$/listviewitemclick" />
             <option value="$PROJECT_DIR$/nohttp" />
             <option value="$PROJECT_DIR$/popupwindow" />
             <option value="$PROJECT_DIR$/pulltorefresh" />
             <option value="$PROJECT_DIR$/pulltorefreshlistview" />
+            <option value="$PROJECT_DIR$/secondlevellinkage" />
             <option value="$PROJECT_DIR$/selectallandinvertselect" />
             <option value="$PROJECT_DIR$/sugarorm" />
             <option value="$PROJECT_DIR$/timer" />
