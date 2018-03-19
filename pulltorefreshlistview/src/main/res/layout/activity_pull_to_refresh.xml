@@ -6,11 +6,33 @@
     android:orientation="vertical"
     tools:context="com.fupengpeng.pulltorefreshlistview.PullToRefreshActivity">
 
+
+    <LinearLayout
+        android:id="@+id/ll_fragment_order_center_all"
+        android:visibility="gone"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_weight="0.5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:src="@drawable/zanwudingdan" />
+        <TextView
+            android:gravity="top|center_horizontal"
+            android:layout_weight="0.5"
+            android:textSize="@dimen/dp_40"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="@string/order_center_all" />
+    </LinearLayout>
     <!--     ptr:ptrAnimationStyle="flip"  flip:翻转  rotate:旋转-->
     <!--     ptr:ptrShowIndicator="true"  右上角 右下角出现箭头-->
     <com.handmark.pulltorefresh.library.PullToRefreshListView
         xmlns:ptr="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/pullToRefresh"
+        android:id="@+id/ptrlv_fragment_order_center_all"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         ptr:ptrDrawable="@drawable/default_ptr_flip"

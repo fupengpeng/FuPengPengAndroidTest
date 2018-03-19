@@ -38,17 +38,17 @@ public class OrderCenterAllFragmentAdapter extends BaseAdapter{
 
 
     public void addFirst(List<Map<String, Object>> list){
+        Log.e(TAG, "addFirst: "+"----007");
         for (int i = 0; i < list.size() ; i++) {
             data.add(0,list.get(i));
         }
-//        data.add(0, list.get(0));
     }
 
     public void addLast(List<Map<String, Object>> list){
+        Log.e(TAG, "addLast: "+"----008" );
         for (int i = 0; i < list.size() ; i++) {
             data.add(list.get(i));
         }
-//        data.add( list.get(0));
     }
 
 
@@ -78,15 +78,18 @@ public class OrderCenterAllFragmentAdapter extends BaseAdapter{
     //获取一个在数据集中指定索引的视图来显示数据
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        Log.e(TAG, "getView: "+"----009" );
         ViewHolder viewHolder = null;
         //如果缓存convertView为空，则需要创建View
         if (convertView == null) {
+            Log.e(TAG, "getView: "+"----010" );
             //根据自定义的Item布局加载布局
             convertView = mInflater.inflate(R.layout.item_fragment_order_center_order_list, null);
             viewHolder = new ViewHolder(convertView);
             //将设置好的布局保存到缓存中，并将其设置在Tag里，以便后面方便取出Tag
             convertView.setTag(viewHolder);
         } else {
+            Log.e(TAG, "getView: "+"----011" );
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
@@ -153,4 +156,6 @@ public class OrderCenterAllFragmentAdapter extends BaseAdapter{
             ButterKnife.bind(this, view);
         }
     }
+
 }
+

@@ -1,4 +1,4 @@
-package com.fupengpeng.sugarorm.bean;
+package com.fupengpeng.sugarorm.entity;
 
 import com.orm.SugarRecord;
 import com.orm.dsl.Unique;

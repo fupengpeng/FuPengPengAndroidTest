@@ -4,7 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import com.fupengpeng.sugarorm.bean.Article;
+import com.fupengpeng.sugarorm.entity.Article;
 import com.orm.SugarRecord;
 
 import butterknife.BindView;
@@ -128,6 +128,7 @@ public class SugarORMActivity extends AppCompatActivity {
         tvLoginUsername03.setText(article03.getUsername());
         tvLoginPassword03.setText(article03.getPassword());
         tvLoginUid03.setText(article03.getUid());
+
         Article article02 = Article.findById(Article.class,2);
         tvLoginUsername02.setText(article02.getUsername());
         tvLoginPassword02.setText(article02.getPassword());
