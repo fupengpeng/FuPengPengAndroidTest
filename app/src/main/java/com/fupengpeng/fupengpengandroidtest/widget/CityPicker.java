@@ -19,21 +19,16 @@ import com.fupengpeng.fupengpengandroidtest.R;
 import com.fupengpeng.fupengpengandroidtest.model.CityModel;
 import com.fupengpeng.fupengpengandroidtest.model.DistrictModel;
 import com.fupengpeng.fupengpengandroidtest.model.ProvinceModel;
-import com.fupengpeng.fupengpengandroidtest.utils.XmlParserHandler;
 import com.fupengpeng.fupengpengandroidtest.widget.wheel.OnWheelChangedListener;
 import com.fupengpeng.fupengpengandroidtest.widget.wheel.WheelView;
 import com.fupengpeng.fupengpengandroidtest.widget.wheel.adapters.ArrayWheelAdapter;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
 
 /**
  * 省市区三级选择
@@ -66,17 +61,37 @@ public class CityPicker implements CanShow, OnWheelChangedListener {
      * 所有省
      */
     protected String[] mProvinceDatas;
+
+    /**
+     * 所有省
+     */
+    protected ProvinceModel[] mProvinceData;
+
+
     
     /**
      * key - 省 value - 市
      */
     protected Map<String, String[]> mCitisDatasMap = new HashMap<String, String[]>();
-    
+
+    /**
+     * key - 省 value - 市
+     */
+    protected Map<ProvinceModel, CityModel[]> mCitisDataMap = new HashMap<ProvinceModel, CityModel[]>();
+
+
+
     /**
      * key - 市 values - 区
      */
     protected Map<String, String[]> mDistrictDatasMap = new HashMap<String, String[]>();
-    
+
+    /**
+     * key - 市 values - 区
+     */
+    protected Map<CityModel, DistrictModel[]> mDistrictDataMap = new HashMap<CityModel, DistrictModel[]>();
+
+
     /**
      * key - 区 values - 邮编
      */
@@ -86,16 +101,31 @@ public class CityPicker implements CanShow, OnWheelChangedListener {
      * 当前省的名称
      */
     protected String mCurrentProviceName;
-    
+
+    /**
+     * 当前省
+     */
+    protected ProvinceModel mCurrentProvice;
+
     /**
      * 当前市的名称
      */
     protected String mCurrentCityName;
+
+    /**
+     * 当前市
+     */
+    protected CityModel mCurrentCity;
     
     /**
      * 当前区的名称
      */
     protected String mCurrentDistrictName = "";
+
+    /**
+     * 当前区
+     */
+    protected DistrictModel mCurrentDistrict;
     
     /**
      * 当前区的邮政编码
@@ -106,6 +136,7 @@ public class CityPicker implements CanShow, OnWheelChangedListener {
     
     public interface OnCityItemClickListener {
         void onSelected(String... citySelected);
+        void onSelected(Object... Object);
     }
     
     public void setOnCityItemClickListener(OnCityItemClickListener listener) {
@@ -292,9 +323,12 @@ public class CityPicker implements CanShow, OnWheelChangedListener {
             public void onClick(View v) {
                 if (showProvinceAndCity) {
                     listener.onSelected(mCurrentProviceName, mCurrentCityName, "", mCurrentZipCode);
+                    listener.onSelected(mCurrentProvice,mCurrentCity,null,mCurrentZipCode);
+
                 }
                 else {
                     listener.onSelected(mCurrentProviceName, mCurrentCityName, mCurrentDistrictName, mCurrentZipCode);
+                    listener.onSelected(mCurrentProvice,mCurrentCity,mCurrentDistrict,mCurrentZipCode);
                 }
                 hide();
             }
@@ -570,10 +604,16 @@ public class CityPicker implements CanShow, OnWheelChangedListener {
         }
         
     }
-    
+
+
+    /**
+     * 设置默认展示的省市区县
+     *     根据设置的默认省份直接定位到该省份
+     */
     private void setUpData() {
         int provinceDefault = -1;
-        if (!TextUtils.isEmpty(defaultProvinceName) && mProvinceDatas.length > 0) {
+        if (!TextUtils.isEmpty(defaultProvinceName) &&
+                mProvinceDatas.length > 0) {
             for (int i = 0; i < mProvinceDatas.length; i++) {
                 if (mProvinceDatas[i].contains(defaultProvinceName)) {
                     provinceDefault = i;
@@ -626,17 +666,17 @@ public class CityPicker implements CanShow, OnWheelChangedListener {
     
     protected void initProvinceDatas(Context context) {
         List<ProvinceModel> provinceList = null;
-        AssetManager asset = context.getAssets();
+//        AssetManager asset = context.getAssets();
         try {
-            InputStream input = asset.open("province_data.xml");
-            // 创建一个解析xml的工厂对象
-            SAXParserFactory spf = SAXParserFactory.newInstance();
-            // 解析xml
-            SAXParser parser = spf.newSAXParser();
-            XmlParserHandler handler = new XmlParserHandler();
-            parser.parse(input, handler);
-            input.close();
-            // 获取解析出来的数据
+//            InputStream input = asset.open("province_data.xml");
+//            // 创建一个解析xml的工厂对象
+//            SAXParserFactory spf = SAXParserFactory.newInstance();
+//            // 解析xml
+//            SAXParser parser = spf.newSAXParser();
+//            XmlParserHandler handler = new XmlParserHandler();
+//            parser.parse(input, handler);
+//            input.close();
+//            // 获取解析出来的数据
 //            provinceList = handler.getDataList();
 
             provinceList = JSON.parseArray(getJson(context),ProvinceModel.class);
@@ -645,10 +685,12 @@ public class CityPicker implements CanShow, OnWheelChangedListener {
             //*/ 初始化默认选中的省、市、区
             if (provinceList != null && !provinceList.isEmpty()) {
                 mCurrentProviceName = provinceList.get(0).getName();
+                mCurrentProvice = provinceList.get(0);
                 List<CityModel> cityList = provinceList.get(0).getCityList();
                 if (cityList != null && !cityList.isEmpty()) {
                     mCurrentCityName = cityList.get(0).getName();
-                    List<DistrictModel> districtList = cityList.get(0).getDistrictList();
+                    mCurrentCity = cityList.get(0);
+                    List<DistrictModel> districtList = cityList.get(0).getCityList();
                     mCurrentDistrictName = districtList.get(0).getName();
                     mCurrentZipCode = districtList.get(0).getZipcode();
                 }
@@ -663,7 +705,7 @@ public class CityPicker implements CanShow, OnWheelChangedListener {
                 for (int j = 0; j < cityList.size(); j++) {
                     // 遍历省下面的所有市的数据
                     cityNames[j] = cityList.get(j).getName();
-                    List<DistrictModel> districtList = cityList.get(j).getDistrictList();
+                    List<DistrictModel> districtList = cityList.get(j).getCityList();
                     String[] distrinctNameArray = new String[districtList.size()];
                     DistrictModel[] distrinctArray = new DistrictModel[districtList.size()];
                     for (int k = 0; k < districtList.size(); k++) {
@@ -697,6 +739,16 @@ public class CityPicker implements CanShow, OnWheelChangedListener {
         int pCurrent = mViewCity.getCurrentItem();
         mCurrentCityName = mCitisDatasMap.get(mCurrentProviceName)[pCurrent];
         String[] areas = mDistrictDatasMap.get(mCurrentCityName);
+
+        // TODO: 2018/3/20 0020  mCitisDataMap?????
+//        mCurrentCity = mCitisDataMap.get(mCurrentProvice)[pCurrent];
+//        DistrictModel[] districtmodels =  mDistrictDataMap.get(mCurrentCity);
+//        String[] areass = new String[0];
+//        for (int i = 0; i < districtmodels.length; i++) {
+//            DistrictModel d = districtmodels[i];
+//            areass[i] = districtmodels[i].getName();
+//        }
+
         
         if (areas == null) {
             areas = new String[] { "" };

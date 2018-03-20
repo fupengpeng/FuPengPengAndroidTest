@@ -9,14 +9,11 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.alibaba.fastjson.JSON;
-import com.fupengpeng.fupengpengandroidtest.model.ProvinceModel;
 import com.fupengpeng.fupengpengandroidtest.widget.CityPicker;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
         tvAddress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                selectAddress(MainActivity.this.getApplicationContext());
-                List<ProvinceModel> provinceList = JSON.parseArray(getJson(MainActivity.this.getApplicationContext()), ProvinceModel.class);
-                Log.e("aaa" , provinceList.get(0).getCityList().get(0).getDistrictList().get(0).getZipcode());
+                selectAddress(MainActivity.this);
+//                List<ProvinceModel> provinceList = JSON.parseArray(getJson(MainActivity.this.getApplicationContext()), ProvinceModel.class);
+//                Log.e("aaa" , provinceList.get(0).getCityList().get(0).getDistrictList().get(0).getZipcode());
 
             }
         });
