@@ -6,13 +6,15 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * 读取Assets目录下面的json文件
- * Created by liji on 2016/5/6.
+ * @author fupengpeng
+ * @description 读取Assets目录下面的json文件
+ * @date 2018/3/20 0020 15:20
  */
 public class JAssetsUtils {
-    
+
     /**
      * 读取Assets目录下面指定文件并返回String数据
+     *
      * @param context
      * @param fileName
      * @return
@@ -25,15 +27,12 @@ public class JAssetsUtils {
             inputStream.read(buffer);
             String json = new String(buffer, "utf-8");
             stringBuilder = stringBuilder.append(json);
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
-        }
-        finally {
+        } finally {
             try {
                 inputStream.close();
-            }
-            catch (IOException e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
         }

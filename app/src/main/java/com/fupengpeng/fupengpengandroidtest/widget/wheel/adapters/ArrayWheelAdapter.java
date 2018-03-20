@@ -18,26 +18,29 @@ package com.fupengpeng.fupengpengandroidtest.widget.wheel.adapters;
 import android.content.Context;
 
 /**
- * The simple Array wheel adapter
  * @param <T> the element type
+ * @author fupengpeng
+ * @description The simple Array wheel adapter
+ * @date 2018/3/20 0020 15:18
  */
 public class ArrayWheelAdapter<T> extends AbstractWheelTextAdapter {
-    
+
     // items
     private T items[];
 
     /**
      * Constructor
+     *
      * @param context the current context
-     * @param items the items
+     * @param items   the items
      */
     public ArrayWheelAdapter(Context context, T items[]) {
         super(context);
-        
+
         //setEmptyItemResource(TEXT_VIEW_ITEM_RESOURCE);
         this.items = items;
     }
-    
+
     @Override
     public CharSequence getItemText(int index) {
         if (index >= 0 && index < items.length) {

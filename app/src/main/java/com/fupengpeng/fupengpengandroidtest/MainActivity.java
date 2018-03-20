@@ -93,6 +93,11 @@ public class MainActivity extends AppCompatActivity {
                 //为TextView赋值
                 tvAddress.setText(province.trim() + "-" + city.trim() + "-" + district.trim());
             }
+
+            @Override
+            public void onSelected(Object... Object) {
+
+            }
         });
     }
 

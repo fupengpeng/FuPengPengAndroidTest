@@ -19,25 +19,32 @@ package com.fupengpeng.fupengpengandroidtest.widget.wheel.adapters;
 import android.content.Context;
 
 /**
- * Numeric Wheel adapter.
+ * @author fupengpeng
+ * @description Numeric Wheel adapter.
+ * @date 2018/3/20 0020 15:18
  */
 public class NumericWheelAdapter extends AbstractWheelTextAdapter {
-    
-    /** The default min value */
+
+    /**
+     * The default min value
+     */
     public static final int DEFAULT_MAX_VALUE = 9;
 
-    /** The default max value */
+    /**
+     * The default max value
+     */
     private static final int DEFAULT_MIN_VALUE = 0;
-    
+
     // Values
     private int minValue;
     private int maxValue;
-    
+
     // format
     private String format;
-    
+
     /**
      * Constructor
+     *
      * @param context the current context
      */
     public NumericWheelAdapter(Context context) {
@@ -46,7 +53,8 @@ public class NumericWheelAdapter extends AbstractWheelTextAdapter {
 
     /**
      * Constructor
-     * @param context the current context
+     *
+     * @param context  the current context
      * @param minValue the wheel min value
      * @param maxValue the wheel max value
      */
@@ -56,14 +64,15 @@ public class NumericWheelAdapter extends AbstractWheelTextAdapter {
 
     /**
      * Constructor
-     * @param context the current context
+     *
+     * @param context  the current context
      * @param minValue the wheel min value
      * @param maxValue the wheel max value
-     * @param format the format string
+     * @param format   the format string
      */
     public NumericWheelAdapter(Context context, int minValue, int maxValue, String format) {
         super(context);
-        
+
         this.minValue = minValue;
         this.maxValue = maxValue;
         this.format = format;
@@ -81,5 +90,5 @@ public class NumericWheelAdapter extends AbstractWheelTextAdapter {
     @Override
     public int getItemsCount() {
         return maxValue - minValue + 1;
-    }    
+    }
 }

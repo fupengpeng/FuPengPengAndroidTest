@@ -1,5 +1,5 @@
 /*
- *  Copyright 2011 Yuri Kanivets
+ *
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -16,20 +16,22 @@
 
 package com.fupengpeng.fupengpengandroidtest.widget.wheel.adapters;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import android.database.DataSetObserver;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
- * Abstract Wheel adapter.
+ * @author fupengpeng
+ * @description Abstract Wheel adapter.
+ * @date 2018/3/20 0020 15:17
  */
 public abstract class AbstractWheelAdapter implements WheelViewAdapter {
     // Observers
     private List<DataSetObserver> datasetObservers;
-    
+
     @Override
     public View getEmptyItem(View convertView, ViewGroup parent) {
         return null;
@@ -49,7 +51,7 @@ public abstract class AbstractWheelAdapter implements WheelViewAdapter {
             datasetObservers.remove(observer);
         }
     }
-    
+
     /**
      * Notifies observers about data changing
      */
@@ -60,7 +62,7 @@ public abstract class AbstractWheelAdapter implements WheelViewAdapter {
             }
         }
     }
-    
+
     /**
      * Notifies observers about invalidating data
      */

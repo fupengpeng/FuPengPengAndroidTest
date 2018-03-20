@@ -1,4 +1,4 @@
-package com.fupengpeng.fupengpengandroidtest.entity;
+package com.fupengpeng.listmenu.entity;
 
 /**
  * @author fupengpeng

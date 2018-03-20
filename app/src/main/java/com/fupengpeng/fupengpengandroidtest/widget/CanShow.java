@@ -1,8 +1,9 @@
 package com.fupengpeng.fupengpengandroidtest.widget;
 
 /**
- * 作者：liji on 2016/6/30 14:58
- * 邮箱：lijiwork@sina.com
+ * @author fupengpeng
+ * @description
+ * @date 2018/3/20 0020 15:17
  */
 public interface CanShow {
     void setType(int var1);

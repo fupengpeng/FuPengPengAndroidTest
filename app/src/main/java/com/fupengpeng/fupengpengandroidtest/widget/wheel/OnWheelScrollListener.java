@@ -17,18 +17,22 @@
 package com.fupengpeng.fupengpengandroidtest.widget.wheel;
 
 /**
- * Wheel scrolled listener interface.
+ * @author fupengpeng
+ * @description Wheel scrolled listener interface.
+ * @date 2018/3/20 0020 15:15
  */
 public interface OnWheelScrollListener {
-	/**
-	 * Callback method to be invoked when scrolling started.
-	 * @param wheel the wheel view whose state has changed.
-	 */
-	void onScrollingStarted(WheelView wheel);
-	
-	/**
-	 * Callback method to be invoked when scrolling ended.
-	 * @param wheel the wheel view whose state has changed.
-	 */
-	void onScrollingFinished(WheelView wheel);
+    /**
+     * Callback method to be invoked when scrolling started.
+     *
+     * @param wheel the wheel view whose state has changed.
+     */
+    void onScrollingStarted(WheelView wheel);
+
+    /**
+     * Callback method to be invoked when scrolling ended.
+     *
+     * @param wheel the wheel view whose state has changed.
+     */
+    void onScrollingFinished(WheelView wheel);
 }

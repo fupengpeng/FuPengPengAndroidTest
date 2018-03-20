@@ -22,34 +22,36 @@ import com.fupengpeng.fupengpengandroidtest.widget.wheel.WheelAdapter;
 
 
 /**
- * Adapter class for old wheel adapter (deprecated WheelAdapter class).
- * 
- * @deprecated Will be removed soon
+ * @author fupengpeng
+ * @description Adapter class for old wheel adapter (deprecated WheelAdapter class).  Will be removed soon
+ * @date 2018/3/20 0020 15:17
  */
 public class AdapterWheel extends AbstractWheelTextAdapter {
 
     // Source adapter
     private WheelAdapter adapter;
-    
+
     /**
      * Constructor
+     *
      * @param context the current context
      * @param adapter the source adapter
      */
     public AdapterWheel(Context context, WheelAdapter adapter) {
         super(context);
-        
+
         this.adapter = adapter;
     }
 
     /**
      * Gets original adapter
+     *
      * @return the original adapter
      */
     public WheelAdapter getAdapter() {
         return adapter;
     }
-    
+
     @Override
     public int getItemsCount() {
         return adapter.getItemsCount();
